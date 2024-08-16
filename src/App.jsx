@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Topbar />
-      <Sidebar />
+      <Sidebar></Sidebar>
       <MainView />
       <h1>This is my app now bitch</h1>
     </>
