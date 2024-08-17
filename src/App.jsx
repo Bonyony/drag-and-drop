@@ -5,10 +5,9 @@ import "./App.css";
 function App() {
   return (
     <>
+      <Sidebar />
       <Topbar />
-      <Sidebar></Sidebar>
       <MainView />
-      <h1>This is my app now bitch</h1>
     </>
   );
 }
