@@ -44,7 +44,7 @@ const Sidebar = () => {
             </li>{" "}
             <li>
               <button className="group bg-gray-200 hover:bg-gray-300 p-2 flex flex-row justify-between items-center w-48 rounded-md">
-                <LuCog className="group-hover:text-teal-400" />
+                <LuCog className="group-hover:text-teal-700" />
                 <h4>Settings</h4>
               </button>
             </li>

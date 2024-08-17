@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Topbar, Sidebar, MainView } from "./components";
+import { Topbar, Sidebar, MainView, NoteItem } from "./components";
 import "./App.css";
 
 function App() {

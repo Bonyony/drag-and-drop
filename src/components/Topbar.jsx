@@ -10,7 +10,7 @@ const Topbar = () => {
               <li>
                 <a
                   href=""
-                  className="bg-[#182e72] hover:bg-[#404F7D] py-1 px-2 rounded-lg transition-all duration-150"
+                  className="bg-[#19358b] hover:bg-[#163bab] py-1 px-2 rounded-sm transition-all duration-150"
                 >
                   Home
                 </a>
@@ -18,7 +18,7 @@ const Topbar = () => {
               <li>
                 <a
                   href=""
-                  className="bg-[#182e72] hover:bg-[#404F7D] py-1 px-2 rounded-lg transition-all duration-150"
+                  className="bg-[#19358b] hover:bg-[#163bab] py-1 px-2 rounded-sm transition-all duration-150"
                 >
                   Contact
                 </a>
