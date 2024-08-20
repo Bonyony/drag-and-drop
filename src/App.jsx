@@ -1,18 +1,17 @@
-import { useState } from "react";
-import { Topbar, Sidebar, MainView, NoteItem } from "./components";
 import "./App.css";
-import { DndContext, closestCorners } from "@dnd-kit/core";
-import { DragDropProvider } from "@dnd-kit/react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import NoteBoard from "./pages/NoteBoard";
+import Info from "./pages/Info";
 
 function App() {
-  const [isDropped, setIsDropped] = useState(false);
   return (
     <>
-      <Sidebar />
-      <Topbar />
-      <DragDropProvider>
-        <MainView />
-      </DragDropProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/noteboard" element={<NoteBoard />} />
+        <Route path="/info" element={<Info />} />
+      </Routes>
     </>
   );
 }

@@ -13,7 +13,7 @@ const Column = ({ children, id, index }) => {
   return (
     <div
       ref={ref}
-      className=" m-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
+      className="cursor-grab m-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
     >
       <h2 className="text-white flex justify-center mt-5 font-black text-2xl">
         Thing {index + 1}

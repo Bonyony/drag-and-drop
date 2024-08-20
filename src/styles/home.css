@@ -1,0 +1,6 @@
+.home {
+  background-color: #0a022d;
+  background-size: 100px 100px;
+  background-image: linear-gradient(to right, #002451 2px, transparent 1px),
+    linear-gradient(to bottom, #002451 2px, transparent 1px);
+}
