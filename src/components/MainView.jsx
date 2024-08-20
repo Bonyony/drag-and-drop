@@ -22,6 +22,7 @@ const MainView = (id) => {
 
   return (
     <DragDropProvider
+      // below is collision detection utilizing 'move'
       onDragOver={(event) => {
         const { source, target } = event.operation;
 
@@ -30,8 +31,8 @@ const MainView = (id) => {
     >
       <div ref={ref} className="main ml-56 h-screen">
         <div className="flex flex-row gap-3">
-          {Object.entries(items).map(([column, items]) => (
-            <Column key={column} id={column}>
+          {Object.entries(items).map(([column, items, index]) => (
+            <Column key={column} id={column} index={index}>
               {items.map((id, index) => (
                 <NoteItem key={id} id={id} index={index} column={column} />
               ))}

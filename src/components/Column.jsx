@@ -1,16 +1,20 @@
 import React from "react";
-import { useDroppable } from "@dnd-kit/react";
+import { useSortable } from "@dnd-kit/react/sortable";
 import { CollisionPriority } from "@dnd-kit/abstract";
 
-const Column = ({ children, id }) => {
-  const { ref } = useDroppable({
+const Column = ({ children, id, index }) => {
+  const { ref } = useSortable({
     id,
+    index,
     type: "column",
-    accept: "item",
     collisionPriority: CollisionPriority.Low,
+    accept: ["item", "column"],
   });
   return (
-    <div className=" m-[20px]  min-w-[200px] bg-[#003c85] rounded-md">
+    <div
+      ref={ref}
+      className=" m-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
+    >
       <h2 className="text-white flex justify-center mt-5 font-black text-2xl">
         Thing
       </h2>
