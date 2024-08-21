@@ -1,0 +1,5 @@
+.overflow-handler {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+}

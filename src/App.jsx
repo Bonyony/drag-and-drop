@@ -7,11 +7,14 @@ import Info from "./pages/Info";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/noteboard" element={<NoteBoard />} />
-        <Route path="/info" element={<Info />} />
-      </Routes>
+      {/* May need to change this overflow handler for the noteboard view */}
+      <div className="overflow-handler">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/noteboard" element={<NoteBoard />} />
+          <Route path="/info" element={<Info />} />
+        </Routes>
+      </div>
     </>
   );
 }
