@@ -13,7 +13,7 @@ const NoteItem = ({ id, index, column }) => {
   return (
     <button
       ref={ref}
-      className=" z-20 w-auto bg-gray-100 hover:bg-gray-300 opacity-90 rounded-sm"
+      className="p-2 z-20 w-auto bg-gray-100 hover:bg-gray-300 opacity-90 rounded-sm"
     >
       {id}
     </button>

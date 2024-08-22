@@ -1,5 +1,5 @@
 import React from "react";
-import { Topbar, Sidebar, MainView } from "../components";
+import { Topbar, Sidebar, MainView, Footer } from "../components";
 import { DragDropProvider } from "@dnd-kit/react";
 
 const NoteBoard = () => {
@@ -10,6 +10,7 @@ const NoteBoard = () => {
       <DragDropProvider>
         <MainView />
       </DragDropProvider>
+      {/* <Footer /> */}
     </>
   );
 };

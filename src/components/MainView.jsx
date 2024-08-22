@@ -14,10 +14,25 @@ const MainView = (id) => {
   const { ref } = useDroppable({
     id,
   });
+  // Items are hard-coded for now
   const [items, setItems] = useState({
-    A: ["A0", "A1", "A2"],
-    B: ["B0", "B1"],
-    C: ["C0", "C1", "C2"],
+    A: ["A0", "A1", "A2", "Hello", "Meet the real me!"],
+    B: [
+      "B0",
+      "B1",
+      "This is a very long note, who's only purpose is to test what happens when the subnotes are really long. I like it so far.",
+    ],
+    C: [
+      "C0",
+      "C1",
+      "C2",
+      "Give",
+      "Me",
+      "Cookies",
+      "Dumb",
+      "Stupids",
+      "Hobbits",
+    ],
   });
 
   return (
@@ -29,8 +44,8 @@ const MainView = (id) => {
         setItems((items) => move(items, source, target));
       }}
     >
-      <div ref={ref} className="main ml-56 h-screen">
-        <div className="flex flex-row gap-3">
+      <div ref={ref} className="main ml-56 ">
+        <div className="flex flex-col gap-3">
           {Object.entries(items).map(([column, items], index) => (
             <Column key={column} id={column} index={index}>
               {items.map((id, index) => (

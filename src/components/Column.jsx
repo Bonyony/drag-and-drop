@@ -13,14 +13,31 @@ const Column = ({ children, id, index }) => {
   return (
     <div
       ref={ref}
-      className="cursor-grab m-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
+      className="cursor-grab mx-[75px] mt-[30px] mb-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
     >
-      <h2 className="text-white flex justify-center mt-5 font-black text-2xl">
-        Thing {index + 1}
+      <h2 className="text-white flex justify-between px-5 mt-5 font-black text-2xl">
+        {index + 1} {id}
+        {/* These are buttons for functionality within each note */}
+        <ul className="flex flex-row gap-3  font-thin">
+          <li className="bg-[#0562d3] hover:bg-blue-500 px-1 text-base rounded-sm flex align-middle">
+            <button>Add +</button>
+          </li>
+        </ul>
       </h2>
-      <div className="flex flex-col gap-3 p-[20px]">{children}</div>
+      <div className="grid grid-cols-3 gap-3 p-[20px]">{children}</div>
     </div>
   );
+
+  // function addNoteItem() {
+  //   const noteItemToAdd = {
+  //     id: generateId(),
+  //     title: 1,
+  //   };
+  // }
+
+  // function generateId() {
+  //   return Math.floor(Math.random() * 10001);
+  // }
 };
 
 export default Column;
