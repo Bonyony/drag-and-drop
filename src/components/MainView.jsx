@@ -6,38 +6,20 @@ import NoteItem from "./NoteItem";
 import Column from "./Column";
 
 import "../styles/mainview.css";
-// import { ItemContext } from "../pages/NoteBoard";
+import { ItemContext } from "../pages/NoteBoard";
 
 // This component is the drag and drop main menu
 // It should be enitrely drag and drop - able!
 
 const MainView = (id) => {
-  // const { items, setItems } = useContext(ItemContext);
+  const { items, setItems } = useContext(ItemContext);
   // console.log(items);
 
   const { ref } = useDroppable({
     id,
   });
   // Items are hard-coded for now
-  const [items, setItems] = useState({
-    A: ["A0", "A1", "A2", "Hello", "Meet the real me!"],
-    B: [
-      "B0",
-      "B1",
-      "This is a very long note, who's only purpose is to test what happens when the subnotes are really long. I like it so far.",
-    ],
-    C: [
-      "C0",
-      "C1",
-      "C2",
-      "Give",
-      "Me",
-      "Cookies",
-      "Dumb",
-      "Stupids",
-      "Hobbits",
-    ],
-  });
+  // const [items, setItems] = useState(ItemContext);
 
   return (
     <DragDropProvider
@@ -50,9 +32,11 @@ const MainView = (id) => {
     >
       <div ref={ref} className="main ml-56 ">
         <div className="flex flex-col gap-3">
-          {Object.entries(items).map(([column, items], index) => (
+          {Object.entries(items).map(([column, item], index) => (
             <Column key={column} id={column} index={index}>
-              {items.map((id, index) => (
+              {/* items is being changed by Context? */}
+              {console.log(item, column, index)}
+              {item.map((id, index) => (
                 <NoteItem key={id} id={id} index={index} column={column} />
               ))}
             </Column>
