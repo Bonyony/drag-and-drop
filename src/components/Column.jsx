@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSortable } from "@dnd-kit/react/sortable";
+// import { ItemContext } from "../pages/NoteBoard";
 import { CollisionPriority } from "@dnd-kit/abstract";
 
 const Column = ({ children, id, index }) => {
+  // const { items, setItems } = useContext(ItemContext);
+
   const { ref } = useSortable({
     id,
     index,
@@ -20,6 +23,7 @@ const Column = ({ children, id, index }) => {
         {/* These are buttons for functionality within each note */}
         <ul className="flex flex-row gap-3  font-thin">
           <li className="bg-[#0562d3] hover:bg-blue-500 px-1 text-base rounded-sm flex align-middle">
+            {/* This button is not responding correctly due to dnd-kit, should maybe move it outside of the Column Comp */}
             <button>Add +</button>
           </li>
         </ul>
