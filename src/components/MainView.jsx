@@ -18,8 +18,6 @@ const MainView = (id) => {
   const { ref } = useDroppable({
     id,
   });
-  // Items are hard-coded for now
-  // const [items, setItems] = useState(ItemContext);
 
   return (
     <DragDropProvider
@@ -30,14 +28,23 @@ const MainView = (id) => {
         setItems((items) => move(items, source, target));
       }}
     >
-      <div ref={ref} className="main ml-56 ">
+      <div ref={ref} className="main ml-56 min-h-screen">
         <div className="flex flex-col gap-3">
           {Object.entries(items).map(([column, item], index) => (
             <Column key={column} id={column} index={index}>
-              {/* items is being changed by Context? */}
+              {/* Now working as intended, state updates on each drag and drop */}
+              {/* the item will change the array data based on NoteItem position and value */}
+              {/* column and index do not change based on dnd-kit functionality */}
               {console.log(item, column, index)}
-              {item.map((id, index) => (
-                <NoteItem key={id} id={id} index={index} column={column} />
+              {/* Need to implement logic below to handle duplicate values */}
+              {item.map((value, index) => (
+                <NoteItem
+                  // may have to make the key a random value? something to ensure a unique key
+                  key={value}
+                  id={value}
+                  index={index}
+                  column={column}
+                />
               ))}
             </Column>
           ))}

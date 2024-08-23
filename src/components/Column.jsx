@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useSortable } from "@dnd-kit/react/sortable";
-// import { ItemContext } from "../pages/NoteBoard";
+import { ItemContext } from "../pages/NoteBoard";
 import { CollisionPriority } from "@dnd-kit/abstract";
 
 const Column = ({ children, id, index }) => {
-  // const { items, setItems } = useContext(ItemContext);
+  const { items, setItems } = useContext(ItemContext);
 
   const { ref } = useSortable({
     id,
@@ -32,15 +32,7 @@ const Column = ({ children, id, index }) => {
     </div>
   );
 
-  // function addNoteItem() {
-  //   const noteItemToAdd = {
-  //     id: generateId(),
-  //     title: 1,
-  //   };
-  // }
-
-  // function generateId() {
-  //   return Math.floor(Math.random() * 10001);
+  // function handleClick() {
   // }
 };
 
