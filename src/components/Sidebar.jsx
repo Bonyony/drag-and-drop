@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { LuPencilRuler, LuLightbulb, LuTrash2, LuCog } from "react-icons/lu";
+
+import { ItemContext } from "../pages/NoteBoard";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
+  const { items, setItems } = useContext(ItemContext);
+
+  // Button functionality
+  function makeNewBigNote() {
+    console.log("it works!");
+    // Logic here needs to add a key value pair to the items object such as: D: ["x"]
+    setItems((items) => items);
+  }
+
+  function makeUpdate() {
+    console.log("me working!");
+  }
+
+  function deleteNote() {
+    console.log("you gon get deleted!");
+  }
+
   return (
     <>
       <nav
@@ -25,19 +44,28 @@ const Sidebar = () => {
         <div id="sidebar-items">
           <ul className="flex flex-col gap-2">
             <li>
-              <button className="group bg-gray-200 hover:bg-gray-300 p-2  flex flex-row justify-between items-center w-48 rounded-md">
+              <button
+                onClick={makeNewBigNote}
+                className="group bg-gray-200 hover:bg-gray-300 p-2  flex flex-row justify-between items-center w-48 rounded-md"
+              >
                 <LuLightbulb className="group-hover:text-blue-500" />
                 <h4 className="">New</h4>
               </button>
             </li>{" "}
             <li>
-              <button className="group bg-gray-200 hover:bg-gray-300 p-2 flex flex-row justify-between items-center w-48 rounded-md">
+              <button
+                onClick={makeUpdate}
+                className="group bg-gray-200 hover:bg-gray-300 p-2 flex flex-row justify-between items-center w-48 rounded-md"
+              >
                 <LuPencilRuler className="group-hover:text-green-600" />
                 <h4>Update</h4>
               </button>
             </li>{" "}
             <li>
-              <button className="group bg-gray-200 hover:bg-gray-300 p-2 flex flex-row justify-between items-center w-48 rounded-md">
+              <button
+                onClick={deleteNote}
+                className="group bg-gray-200 hover:bg-gray-300 p-2 flex flex-row justify-between items-center w-48 rounded-md"
+              >
                 <LuTrash2 className="group-hover:text-red-600" />
                 <h4>Delete</h4>
               </button>

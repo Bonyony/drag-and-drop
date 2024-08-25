@@ -13,8 +13,6 @@ import { ItemContext } from "../pages/NoteBoard";
 
 const MainView = (id) => {
   const { items, setItems } = useContext(ItemContext);
-  // console.log(items);
-
   const { ref } = useDroppable({
     id,
   });
@@ -28,7 +26,7 @@ const MainView = (id) => {
         setItems((items) => move(items, source, target));
       }}
     >
-      <div ref={ref} className="main ml-56 min-h-screen">
+      <div ref={ref} className="main ml-56 min-h-screen pb-5">
         <div className="flex flex-col gap-3">
           {Object.entries(items).map(([column, item], index) => (
             <Column key={column} id={column} index={index}>
