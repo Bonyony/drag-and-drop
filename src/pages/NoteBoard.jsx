@@ -5,6 +5,7 @@ import { DragDropProvider } from "@dnd-kit/react";
 export const ItemContext = createContext();
 
 const NoteBoard = () => {
+  // let notes = {};
   let notes = {
     A: ["A0", "A1", "A2", "Hello", "Meet the real me!"],
     B: [

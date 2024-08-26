@@ -16,7 +16,7 @@ const Column = ({ children, id, index }) => {
   return (
     <div
       ref={ref}
-      className="cursor-grab mx-[75px] mt-[30px] mb-[20px] border-[#0562d3] border-2 min-w-[200px] bg-[#003c85] rounded-md"
+      className="cursor-grab mx-[75px] mt-[30px] mb-[20px] border-[#0562d3] border-2  bg-[#003c85] rounded-md"
     >
       <h2 className="text-white flex justify-between px-5 mt-5 font-black text-2xl">
         {index + 1} {id}
@@ -28,7 +28,7 @@ const Column = ({ children, id, index }) => {
           </li>
         </ul>
       </h2>
-      <div className="grid grid-cols-3 gap-3 p-[20px]">{children}</div>
+      <div className="grid grid-cols-3 gap-3 p-[20px] ">{children}</div>
     </div>
   );
 

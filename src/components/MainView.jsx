@@ -42,6 +42,10 @@ const MainView = (id) => {
                   id={value}
                   index={index}
                   column={column}
+                  activationConstraint={{
+                    delay: 150,
+                    tolerance: 5,
+                  }}
                 />
               ))}
             </Column>

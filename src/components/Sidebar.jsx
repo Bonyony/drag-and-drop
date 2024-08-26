@@ -11,7 +11,8 @@ const Sidebar = () => {
   function makeNewBigNote() {
     console.log("it works!");
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
-    setItems(() => Object.assign(items, { X: ["x"] }));
+    // The key will be an input by the user. All keys HAVE to be unique
+    setItems(() => Object.assign(items, { Test: ["Please work baby!"] }));
     console.log(items);
   }
 
