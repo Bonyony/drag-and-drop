@@ -11,7 +11,8 @@ const Sidebar = () => {
   function makeNewBigNote() {
     console.log("it works!");
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
-    setItems((items) => items);
+    setItems(() => Object.assign(items, { X: ["x"] }));
+    console.log(items);
   }
 
   function makeUpdate() {

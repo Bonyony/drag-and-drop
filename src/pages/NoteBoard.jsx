@@ -5,8 +5,7 @@ import { DragDropProvider } from "@dnd-kit/react";
 export const ItemContext = createContext();
 
 const NoteBoard = () => {
-  // Need to implement logic to handle duplicate values
-  const [items, setItems] = useState({
+  let notes = {
     A: ["A0", "A1", "A2", "Hello", "Meet the real me!"],
     B: [
       "B0",
@@ -24,7 +23,9 @@ const NoteBoard = () => {
       "Stupids",
       "Hobbits",
     ],
-  });
+  };
+  // Need to implement logic to handle duplicate values
+  const [items, setItems] = useState(notes);
   return (
     <>
       <ItemContext.Provider value={{ items, setItems }}>
