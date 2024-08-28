@@ -16,7 +16,10 @@ const Sidebar = () => {
     setShowAddModal(true);
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
     // The key will be an input by the user. All keys HAVE to be unique
-    setItems(() => Object.assign(items, { Test: ["Please work baby!"] }));
+    items;
+    let uniqueID = Math.floor(Math.random() * 500);
+    setItems(() => Object.assign({ [uniqueID]: [] }, items));
+    // setItems(() => Object.assign(items, { Test: [] }));
     console.log(items);
   }
 
@@ -85,7 +88,7 @@ const Sidebar = () => {
           </ul>
         </div>
       </nav>
-      {showAddModal && <NewModalBig />}
+      {/* {showAddModal && <NewModalBig />} */}
     </>
   );
 };
