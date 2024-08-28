@@ -1,15 +1,19 @@
 import React, { useState, useContext } from "react";
 import { LuPencilRuler, LuLightbulb, LuTrash2, LuCog } from "react-icons/lu";
-
+import NewModalBig from "./NewModalBig";
 import { ItemContext } from "../pages/NoteBoard";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const { items, setItems } = useContext(ItemContext);
 
+  const [showAddModal, setShowAddModal] = useState(false);
+
   // Button functionality
   function makeNewBigNote() {
     console.log("it works!");
+    // Prompt user to input a name for the master note using a modal pop-up
+    setShowAddModal(true);
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
     // The key will be an input by the user. All keys HAVE to be unique
     setItems(() => Object.assign(items, { Test: ["Please work baby!"] }));
@@ -81,6 +85,7 @@ const Sidebar = () => {
           </ul>
         </div>
       </nav>
+      {showAddModal && <NewModalBig />}
     </>
   );
 };

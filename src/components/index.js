@@ -5,3 +5,4 @@ export { default as NoteItem } from "./NoteItem";
 export { default as Column } from "./Column";
 export { default as About } from "./About";
 export { default as Footer } from "./Footer";
+export { default as NewModalBig } from "./NewModalBig";
