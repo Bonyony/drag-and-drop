@@ -16,9 +16,12 @@ const Sidebar = () => {
     setShowAddModal(true);
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
     // The key will be an input by the user. All keys HAVE to be unique
-    items;
-    let uniqueID = Math.floor(Math.random() * 500);
-    setItems(() => Object.assign({ [uniqueID]: [] }, items));
+    // items;
+    let uniqueID = Date.now().toString(36) + Math.random().toString(36);
+    // let uniqueID = Math.floor(Math.random() * 500);
+    setItems(() =>
+      Object.assign({ [uniqueID]: [Math.random() * Date.now()] }, items)
+    );
     // setItems(() => Object.assign(items, { Test: [] }));
     console.log(items);
   }
