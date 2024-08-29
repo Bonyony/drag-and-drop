@@ -7,22 +7,17 @@ const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const { items, setItems } = useContext(ItemContext);
 
-  const [showAddModal, setShowAddModal] = useState(false);
-
   // Button functionality
   function makeNewBigNote() {
     console.log("it works!");
-    // Prompt user to input a name for the master note using a modal pop-up
-    setShowAddModal(true);
+
     // Logic here needs to add a key value pair to the items object such as: D: ["x"]
     // The key will be an input by the user. All keys HAVE to be unique
-    // items;
     let uniqueID = Date.now().toString(36) + Math.random().toString(36);
-    // let uniqueID = Math.floor(Math.random() * 500);
     setItems(() =>
       Object.assign({ [uniqueID]: [Math.random() * Date.now()] }, items)
     );
-    // setItems(() => Object.assign(items, { Test: [] }));
+
     console.log(items);
   }
 
@@ -32,6 +27,11 @@ const Sidebar = () => {
 
   function deleteNote() {
     console.log("you gon get deleted!");
+
+    // deleting the key using the index
+    setItems(() => delete items[Object.keys[0]]);
+
+    console.log(items);
   }
 
   return (

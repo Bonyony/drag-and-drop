@@ -6,6 +6,8 @@ export const ItemContext = createContext();
 
 const NoteBoard = () => {
   let notes = {};
+
+  // Below is test object
   // let notes = {
   //   A: ["A0", "A1", "A2", "Hello", "Meet the real me!"],
   //   B: [
@@ -26,6 +28,7 @@ const NoteBoard = () => {
   //   ],
   // };
   // Need to implement logic to handle duplicate values
+
   const [items, setItems] = useState(notes);
   return (
     <>
