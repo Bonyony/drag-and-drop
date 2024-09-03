@@ -19,7 +19,7 @@ const Column = ({ children, id, index }) => {
       className="cursor-grab mx-[75px] mt-[30px] mb-[20px] border-[#0562d3] border-2  bg-[#003c85] rounded-md"
     >
       <h2 className="text-white flex justify-between px-5 mt-5 font-black text-2xl">
-        {index + 1} {id}
+        {index + 1} <div className="hidden">{id}</div>
         {/* These are buttons for functionality within each note */}
         <ul className="flex flex-row gap-3  font-thin">
           <li className="bg-[#0562d3] hover:bg-blue-500 px-1 text-base rounded-sm flex align-middle">
